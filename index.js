@@ -1,4 +1,4 @@
-var width = $(window).width(); 
+var width = $(window).width();
 window.onscroll = function(){
 if ((width >= 1000)){
     if(document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
@@ -61,7 +61,26 @@ $(document).ready(function(){
         }, 1800, function(){
         window.location.hash = hash;
        });
-       } 
+       }
       });
   });
-  
+  $(function(){
+  $(".lazy").Lazy();
+});
+// $(document).ready(function () {
+  // // loader
+  // $("html, body").scrollTop(0);
+
+  // WHATWEDO/SUBMISION
+  $(".text").hide();
+  $(".weDo-cont").click(function () {
+    $(this).children(".text").slideToggle(0);
+    $(this).children(".hide-img").fadeToggle(1000);
+  });
+  $(".port_desc").removeClass("here");
+  $(".port_cont").mouseover(function () {
+    $(this).children(".port_desc").addClass("here");
+  });
+  $(".port_cont").mouseleave(function () {
+    $(this).children(".port_desc").removeClass("here").fadeIn;
+  });
